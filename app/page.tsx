@@ -9,6 +9,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+  const [loadingId, setLoadingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
@@ -17,13 +18,27 @@ export default function Home() {
     setLoading(true);
     try {
       const resp = await fetch(`/api/search?name=${encodeURIComponent(query)}`);
-      if (!resp.ok) throw new Error(`Server error ${resp.status}`);
-      const json = await resp.json();
+      const json = await resp.json().catch(() => ({}));
+      if (resp.status === 401) {
+        setError(`Ошибка авторизации: ${json?.error || 'Unauthorized'}`);
+        setResults([]);
+        return;
+      }
+      if (!resp.ok) throw new Error(json?.error || `Server error ${resp.status}`);
       setResults(json.data || []);
     } catch (e: any) {
       setError(String(e?.message || e));
     } finally {
       setLoading(false);
+    }
+    };
+
+  const handleOpen = async (id: string) => {
+    try {
+      setLoadingId(id);
+      await router.push(`/test/${id}`);
+    } finally {
+      setLoadingId(null);
     }
   };
 
@@ -47,7 +62,12 @@ export default function Home() {
               <div className="text-sm text-gray-500">id: {item.id} — {item.type}</div>
             </div>
             <div>
-              <Button onClick={() => router.push(`/test/${item.id}`)}>Открыть</Button>
+              <Button
+                onClick={() => handleOpen(item.id)}
+                disabled={!!loadingId && loadingId !== item.id}
+              >
+                {loadingId === item.id ? "Загрузка..." : "Открыть"}
+              </Button>
             </div>
           </li>
         ))}

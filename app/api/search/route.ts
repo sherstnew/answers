@@ -9,6 +9,8 @@ export async function GET(req: Request) {
     const results = await searchByName(name);
     return NextResponse.json({ data: results });
   } catch (err: any) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    const status = err?.status || 500;
+    const body = { error: err?.message || String(err) };
+    return NextResponse.json(body, { status });
   }
 }
