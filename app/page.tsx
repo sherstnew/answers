@@ -33,12 +33,14 @@ export default function Home() {
     }
     };
 
-  const handleOpen = async (id: string) => {
+  const handleOpen = (id: string) => {
+    setLoadingId(id);
     try {
-      setLoadingId(id);
-      await router.push(`/test/${id}`);
+      // open in new tab
+      window.open(`/test/${id}`, "_blank", "noopener,noreferrer");
     } finally {
-      setLoadingId(null);
+      // keep loading briefly for UX
+      setTimeout(() => setLoadingId(null), 300);
     }
   };
 

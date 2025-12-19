@@ -128,6 +128,25 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
     return ans.right_answer.ids.map((id: string) => idToText(options, id, test));
   }
 
+  // newer format: right_answer.answers -> [{ id, strings: [...] }, ...]
+  if (Array.isArray(ans.right_answer?.answers)) {
+    const out: string[] = [];
+    for (const a of ans.right_answer.answers) {
+      if (Array.isArray(a.strings)) {
+        out.push(...a.strings.map((s: any) => (typeof s === 'string' ? s : String(s))));
+        continue;
+      }
+      if (Array.isArray(a.string)) {
+        out.push(...a.string.map((s: any) => (typeof s === 'string' ? s : String(s))));
+        continue;
+      }
+      if (a.id) {
+        out.push(idToText(options, a.id, test));
+      }
+    }
+    if (out.length > 0) return out;
+  }
+
   // unknown: dump as JSON prettified
   try {
     return [JSON.stringify(ans.right_answer || ans, null, 2)];
