@@ -1,0 +1,1299 @@
+[
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115617,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 26,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Соотнесите даты и события.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "b24c19dc-3837-4d90-8e25-248f38bd8b4b",
+            "text": "1961 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "7c71f303-72b5-45b7-9f13-f5e23347fc1d",
+            "text": "1957 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "b63f0991-81e9-4792-9770-65405a2f3b4d",
+            "text": "1962 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "0f300b71-bc14-4ee7-a332-ef8aaef05b4e",
+            "text": "1959 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "9c5fdf15-fb9a-456b-8814-b0a083f81720",
+            "text": "1956 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "882dfb8d-ce73-48ee-a64d-e933590633e0",
+            "text": "1954 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/source"
+          },
+          {
+            "id": "9285f301-5859-4e9f-a402-7011f15e710e",
+            "text": "Спуск на воду атомного ледокола «Ленин»",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/target"
+          },
+          {
+            "id": "73750f62-a699-4ec7-8dad-975af422c84b",
+            "text": "Восстание рабочих в Новочеркасске",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/target"
+          },
+          {
+            "id": "46225ad1-7bf8-42f6-94f4-3da21ae8a0f8",
+            "text": "Постановление ЦК КПСС «О ежемесячном авансировании колхозников…»",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/target"
+          },
+          {
+            "id": "de95e1bb-ad96-4d5a-9472-c7024e456983",
+            "text": "Запуск Сталинградской (Волжской) ГЭС",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/target"
+          },
+          {
+            "id": "0087539e-74a4-41fd-980a-e8c08d0be9b5",
+            "text": "Запуск Обнинской АЭС",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/match/target"
+          }
+        ],
+        "right_answer": {
+          "match": {
+            "882dfb8d-ce73-48ee-a64d-e933590633e0": [
+              "0087539e-74a4-41fd-980a-e8c08d0be9b5"
+            ],
+            "0f300b71-bc14-4ee7-a332-ef8aaef05b4e": [
+              "9285f301-5859-4e9f-a402-7011f15e710e"
+            ],
+            "b24c19dc-3837-4d90-8e25-248f38bd8b4b": [
+              "de95e1bb-ad96-4d5a-9472-c7024e456983"
+            ],
+            "b63f0991-81e9-4792-9770-65405a2f3b4d": [
+              "73750f62-a699-4ec7-8dad-975af422c84b"
+            ],
+            "9c5fdf15-fb9a-456b-8814-b0a083f81720": [
+              "46225ad1-7bf8-42f6-94f4-3da21ae8a0f8"
+            ],
+            "7c71f303-72b5-45b7-9f13-f5e23347fc1d": []
+          }
+        },
+        "options_order": "none",
+        "initial_options_order": [
+          "882dfb8d-ce73-48ee-a64d-e933590633e0",
+          "0087539e-74a4-41fd-980a-e8c08d0be9b5",
+          "0f300b71-bc14-4ee7-a332-ef8aaef05b4e",
+          "b24c19dc-3837-4d90-8e25-248f38bd8b4b",
+          "b63f0991-81e9-4792-9770-65405a2f3b4d",
+          "9c5fdf15-fb9a-456b-8814-b0a083f81720",
+          "9285f301-5859-4e9f-a402-7011f15e710e",
+          "de95e1bb-ad96-4d5a-9472-c7024e456983",
+          "73750f62-a699-4ec7-8dad-975af422c84b",
+          "46225ad1-7bf8-42f6-94f4-3da21ae8a0f8",
+          "7c71f303-72b5-45b7-9f13-f5e23347fc1d"
+        ],
+        "mix_source": true,
+        "mix_target": true,
+        "reference_right_answer": null,
+        "source_label": "",
+        "target_label": "",
+        "type": "answer/match",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 6,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Соотнесите даты и события.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Соотнесите даты и события.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115617
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115637,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 61,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Установите верную хронологическую последовательность событий.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "b481ae28-9ccd-4f83-a4f7-4460c1b58439",
+            "text": "Основание космодрома «Байконур»",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "0fec27bc-a7ec-4644-ae1e-55c03b10eea3",
+            "text": "Поездка Н. С. Хрущёва в США",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "e36badca-a243-4045-beb5-6e2197d89d2e",
+            "text": "Денежная реформа и деноминация рубля",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "fc79ac9b-8e90-49b3-9e86-52c38a2cd494",
+            "text": "Выход в открытый космос А. А. Леонова",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "7d3a7280-045c-47ef-92a1-7956c7d1e2c9",
+            "text": "Завершение строительства международного магистрального нефтепровода «Дружба»",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": {
+          "ids_order": [
+            "b481ae28-9ccd-4f83-a4f7-4460c1b58439",
+            "0fec27bc-a7ec-4644-ae1e-55c03b10eea3",
+            "e36badca-a243-4045-beb5-6e2197d89d2e",
+            "7d3a7280-045c-47ef-92a1-7956c7d1e2c9",
+            "fc79ac9b-8e90-49b3-9e86-52c38a2cd494"
+          ]
+        },
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/order",
+        "text_input_rules": null,
+        "direction": "vertical"
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 8,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Установите верную хронологическую последовательность событий.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Установите верную хронологическую последовательность событий.",
+      "last_update": 1731485370855,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115637
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115636,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 28,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Заполните пропуски в тексте.",
+          "type": "content/text"
+        },
+        {
+          "type": "content/text/identificational",
+          "text": "24 декабря  Верховный Совет СССР принял закон «Об укреплении связи  и о дальнейшем развитии системы народного образования в СССР». Главной целью реформы была объявлена подготовка технически грамотных кадров для промышленности и сельского хозяйства. Вводилось всеобщее обязательное  образование. Выпускники средней школы наряду с аттестатом зрелости получали .",
+          "content": [],
+          "text_styles": [],
+          "block_styles": [],
+          "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5"
+        }
+      ],
+      "answer": {
+        "text_position": [
+          {
+            "position_id": "5737e629-afae-4f95-a8a0-58aa79e1d018",
+            "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+            "position": 11
+          },
+          {
+            "position_id": "d92eed48-aa05-4ba3-b189-61a0d9506a14",
+            "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+            "position": 67
+          },
+          {
+            "position_id": "d33ed8fc-52f3-410f-8397-40278d4bd6a5",
+            "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+            "position": 281
+          },
+          {
+            "position_id": "bbedcd47-7e74-470e-bcc6-77415fc2900d",
+            "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+            "position": 358
+          }
+        ],
+        "options": [
+          {
+            "id": "56785799-c111-4d73-bbbf-760ba3052dad",
+            "text": "1958 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "8127ae6b-f213-4edb-8063-1d1e6b060d59",
+            "text": "школы с жизнью",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "84c0b767-05bf-4282-bd68-35729f956f45",
+            "text": "8-летнее",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "69b68005-9f27-4f40-b4a7-3df7c3f0666f",
+            "text": "свидетельство о специальности",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "4b3f6a35-cbc0-486d-a67d-91d6fdffb7c8",
+            "text": "1959  г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "0162e069-914e-47fc-8e96-bf77f1a70cb3",
+            "text": "7-летнее",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "4ba8cd26-8efb-41fc-843d-da8a4f361be2",
+            "text": "диплом о высшем образовании",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "8bc89967-6fb9-4496-930f-78b010264f0a",
+            "text": "1957 г.",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "05aad8d7-a588-496f-982c-bf1142824fb1",
+            "text": "школы и заводов",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "d4457007-60da-4106-b8bc-50f67efb968a",
+            "text": "9-летнее",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "e07c49d4-1db4-41cd-99ab-2bb207592053",
+            "text": "ученичества и студенчества",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "17b2ffdd-57fd-484d-aa57-f81371630dd4",
+            "text": "сертификат о курсах",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": {
+          "text_position_answer": [
+            {
+              "position_id": "5737e629-afae-4f95-a8a0-58aa79e1d018",
+              "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+              "id": "56785799-c111-4d73-bbbf-760ba3052dad"
+            },
+            {
+              "position_id": "d92eed48-aa05-4ba3-b189-61a0d9506a14",
+              "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+              "id": "8127ae6b-f213-4edb-8063-1d1e6b060d59"
+            },
+            {
+              "position_id": "d33ed8fc-52f3-410f-8397-40278d4bd6a5",
+              "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+              "id": "84c0b767-05bf-4282-bd68-35729f956f45"
+            },
+            {
+              "position_id": "bbedcd47-7e74-470e-bcc6-77415fc2900d",
+              "text_id": "953a0afa-8b48-4c42-8aec-65b8aafb6bd5",
+              "id": "69b68005-9f27-4f40-b4a7-3df7c3f0666f"
+            }
+          ]
+        },
+        "substitution_mode": "moving",
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/gap/match/text",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 7,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Прочитайте текст и вставьте пропущенные слова.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Прочитайте текст и вставьте пропущенные слова.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115636
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115612,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 18,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Верно ли суждение?\nЦелина — это земля, которая подвергается механической обработке раз в десять лет и покрыта естественной растительностью.\n",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "9cdf16a8-4e35-4c90-96c0-8c312bb8bfbf",
+            "text": "Верно",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "ec9f3c42-42e3-4771-a2d7-988fbe369b4a",
+            "text": "Неверно",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": { "id": "ec9f3c42-42e3-4771-a2d7-988fbe369b4a" },
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/single",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 1,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Верно ли суждение?\nЦелина — это земля, которая подвергается механической обработке раз в десять лет и покрыта естественной растительностью.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Верно ли суждение?\nЦелина — это земля, которая подвергается механической обработке раз в десять лет и покрыта естественной растительностью.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115612
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115611,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 74,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Отметьте явление, нехарактерное для социальной политики СССР 1953-1964 гг.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "12b9b9b9-efcc-4235-9e92-5780656cd0f9",
+            "text": "массовое жилищное строительство",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "40e5c2b4-b0d7-4c5f-9213-ee7b610bcdc5",
+            "text": "дисциплинарная ответственность за прогулы и самовольный уход с предприятия заменялась уголовной",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "02722f5d-8b24-4e92-8fd8-f2474e2faa93",
+            "text": "выдача паспортов колхозникам",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "ebff9e4c-1cc3-4add-8d87-ec7f12949b83",
+            "text": "пенсионная реформа, предполагавшая выплату пенсий для колхозников",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": { "id": "40e5c2b4-b0d7-4c5f-9213-ee7b610bcdc5" },
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/single",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 0,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Отметьте  явление, не характерное для социальной политики СССР 1953-64 гг.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Отметьте  явление, не характерное для социальной политики СССР 1953-64 гг.",
+      "last_update": 1731485369834,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115611
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115638,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 18,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Верно ли суждение?\nК 1962 г. посевные площади под гречиху были увеличены более чем вдвое (с 18 до 37 млн. га), что происходило за счёт сокращения посевов пшеницы и ржи.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "015f774f-9041-41ec-9f1d-5183006d728a",
+            "text": "Верно",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "45cea448-a852-42d2-8b9e-1aa37d4ed550",
+            "text": "Неверно",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": { "id": "45cea448-a852-42d2-8b9e-1aa37d4ed550" },
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/single",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 9,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Верно ли суждение?\nК 1962 г. посевные площади под гречиху были увеличены более чем вдвое (с 18 до 37 млн. га), порой за счёт сокращения посевов пшеницы и ржи.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Верно ли суждение?\nК 1962 г. посевные площади под гречиху были увеличены более чем вдвое (с 18 до 37 млн. га), порой за счёт сокращения посевов пшеницы и ржи.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115638
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115614,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 136,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Отметьте причины из-за которых в начале 1960-х гг.  начался кризис  в сельском хозяйстве и СССР был вынужден закупать зерно за границей.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "options": [
+          {
+            "id": "300ed039-d581-4513-9db8-6ca1f2e7180b",
+            "text": "увеличение посевных площадей для кукурузы",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "dd849036-7b01-481f-8e99-ae6cfb2f9fdd",
+            "text": "сокращение экспорта зерновых культур",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "7960a4fa-8680-4b3b-ba9f-b10fea648bc8",
+            "text": "эрозия почв на целинных землях",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "3f01c3f4-e90c-428e-917a-e1e8a14ee451",
+            "text": "сокращение посадки зерновых культур",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "830e9d24-231f-40b2-9da1-10de6121dd1b",
+            "text": "увеличения посевных площадей для зерновых культур",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          },
+          {
+            "id": "10e2da7e-86f8-41b0-a0b3-16dfa0753e2b",
+            "text": "высокая урожайность кукурузы",
+            "content": [],
+            "text_styles": [],
+            "block_styles": [],
+            "type": "option_type/default"
+          }
+        ],
+        "right_answer": {
+          "ids": [
+            "3f01c3f4-e90c-428e-917a-e1e8a14ee451",
+            "300ed039-d581-4513-9db8-6ca1f2e7180b",
+            "7960a4fa-8680-4b3b-ba9f-b10fea648bc8"
+          ]
+        },
+        "options_order": "random",
+        "reference_right_answer": null,
+        "type": "answer/multiple",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 3,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Отметьте причины из-за которых в начале 1960-х гг.  начался кризис  в сельском хозяйстве и закупка зерна за границей.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Отметьте причины из-за которых в начале 1960-х гг.  начался кризис  в сельском хозяйстве и закупка зерна за границей.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115614
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115613,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 66,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Запишите фамилию исторического деятеля, пропущенную в предложении. \nВ 1953 г. после смерти И. В. Сталина председатель Совета министров __________ выступил с  новой программой преобразования сельского хозяйства, предполагавшей ускорение темпов развития лёгкой и пищевой промышленности, а также сельского хозяйства.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "right_answer": { "string": ["Маленков"], "caseSensitive": false },
+        "reference_right_answer": null,
+        "type": "answer/string",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 2,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Запишите фамилию, пропущенную в тексте.\nВ 1953 г. после смерти И.В. Сталина председатель Совета министров **** выступил с  новой программой преобразования сельского хозяйства, предполагавшей ускорить темпы развития лёгкой и пищевой промышленности, а также",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Запишите фамилию, пропущенную в тексте.\nВ 1953 г. после смерти И.В. Сталина председатель Совета министров **** выступил с  новой программой преобразования сельского хозяйства, предполагавшей ускорить темпы развития лёгкой и пищевой промышленности, а также",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115613
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115615,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 28,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Запишите пропущенный термин.\n___________ — изменение номинала денежных знаков.",
+          "type": "content/text"
+        }
+      ],
+      "answer": {
+        "right_answer": { "string": ["деноминация"], "caseSensitive": false },
+        "reference_right_answer": null,
+        "type": "answer/string",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 4,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Запишите пропущенный термин.\n*** — изменение номинала денежных знаков.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Запишите пропущенный термин.\n*** — изменение номинала денежных знаков.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115615
+  },
+  {
+    "access_level": "read_only",
+    "test_task": {
+      "id": 12115616,
+      "question_elements": [
+        {
+          "text_styles": [
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 0,
+              "offset": 7,
+              "content": ["BOLD"]
+            },
+            {
+              "type": "text_style/inline",
+              "text_block_index": 0,
+              "position": 8,
+              "offset": 29,
+              "content": ["BOLD"]
+            }
+          ],
+          "block_styles": [],
+          "content": [],
+          "text": "Укажите термин, пропущенный в тексте.",
+          "type": "content/text"
+        },
+        {
+          "type": "content/text/identificational",
+          "text": " — крупное государственное социалистическое сельскохозяйственное предприятие, оснащенное машинами для технической и организационной помощи колхозам.",
+          "content": [],
+          "text_styles": [],
+          "block_styles": [],
+          "text_id": "2f7f70fe-cc58-4f33-ae01-5fb39bb3b26c"
+        }
+      ],
+      "answer": {
+        "text_position": [
+          {
+            "position_id": "c8f1c6af-0d08-4184-83ad-9318d9167326",
+            "text_id": "2f7f70fe-cc58-4f33-ae01-5fb39bb3b26c",
+            "position": 0,
+            "options": [
+              {
+                "id": "99d94ff7-7396-490b-949b-947e967fd80b",
+                "text": "машинно-тракторная станция",
+                "content": [],
+                "text_styles": [],
+                "block_styles": [],
+                "type": "option_type/default"
+              },
+              {
+                "id": "b951e156-f3e8-404d-9631-9303ff2910f4",
+                "text": "совхоз",
+                "content": [],
+                "text_styles": [],
+                "block_styles": [],
+                "type": "option_type/default"
+              },
+              {
+                "id": "a7458802-a9e8-4cea-9549-f8ef50f4a27a",
+                "text": "промсовхоз",
+                "content": [],
+                "text_styles": [],
+                "block_styles": [],
+                "type": "option_type/default"
+              },
+              {
+                "id": "e28c010b-8f56-475c-9266-9cfb15235a82",
+                "text": "комбинат",
+                "content": [],
+                "text_styles": [],
+                "block_styles": [],
+                "type": "option_type/default"
+              }
+            ]
+          }
+        ],
+        "right_answer": {
+          "text_position_answer": [
+            {
+              "position_id": "c8f1c6af-0d08-4184-83ad-9318d9167326",
+              "text_id": "2f7f70fe-cc58-4f33-ae01-5fb39bb3b26c",
+              "id": "99d94ff7-7396-490b-949b-947e967fd80b"
+            }
+          ]
+        },
+        "reference_right_answer": null,
+        "options_order": "random",
+        "type": "answer/inline/choice/single",
+        "text_input_rules": null
+      },
+      "task_source": "inner",
+      "task_info": {
+        "show_howto_verify": false,
+        "show_howto_beat": false,
+        "how_to_verify_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        },
+        "how_to_beat_text": {
+          "text": "",
+          "content": [],
+          "text_styles": [],
+          "block_styles": []
+        }
+      },
+      "taskNum": 5,
+      "variant_group_id": null,
+      "variant_group_num": null
+    },
+    "meta": {
+      "version_info": null,
+      "name": "Укажите термин, пропущенный в тексте.",
+      "studying_level_id": 1,
+      "author": null,
+      "description": "Укажите термин, пропущенный в тексте.",
+      "last_update": 1731485371520,
+      "is_autocheckable": true,
+      "copy_info": null,
+      "difficult_level": 0,
+      "tags": [],
+      "subjects": [
+        {
+          "subject_id": 35909469,
+          "education_level_id": 3,
+          "class_level_ids": [11],
+          "primary": true
+        }
+      ],
+      "is_abused": null,
+      "theme_frames": [32116110],
+      "deleted_at": 0,
+      "material_professions_attributes": [],
+      "import_info": null
+    },
+    "attached_study_materials": [],
+    "scoreSettings": { "settingsType": "default", "settings": { "score": 1 } },
+    "id": 12115616
+  }
+]
