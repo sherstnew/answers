@@ -106,15 +106,7 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
   if (type && type.startsWith('answer/gap') && Array.isArray(ans.right_answer?.text_position_answer)) {
     return ans.right_answer.text_position_answer.map((p: any, idx: number) => {
       const txt = idToText(options, p.id, test);
-      // try to resolve human label from answer.text_position block
-      const blocks: any[] = ans.text_position || ans.text_positions || (ans as any).text_position_answer_block || [];
-      let posLabel: string | number | undefined = undefined;
-      if (Array.isArray(blocks)) {
-        const block = blocks.find((b: any) => b.position_id === p.position_id || b.position_id === p.position_id);
-        if (block) posLabel = block.position ?? block.position_id;
-      }
-      const label = posLabel !== undefined ? `Позиция ${posLabel}` : `Позиция ${idx + 1}`;
-      return `${label} — ${txt}`;
+      return `${idx + 1}. ${txt}`;
     });
   }
 
@@ -145,6 +137,34 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
       }
     }
     if (out.length > 0) return out;
+  }
+
+  // table format: cells -> { "row": { "col": [text] } }
+  if (type === "answer/table" && ans.right_answer?.cells) {
+    const cells: Record<string, Record<string, string[]>> = ans.right_answer.cells;
+    const lines: string[] = [];
+    for (const [row, cols] of Object.entries(cells)) {
+      for (const [col, texts] of Object.entries(cols)) {
+        if (Array.isArray(texts) && texts.length > 0) {
+          const rowNum = parseInt(row) + 1;
+          const colNum = parseInt(col) + 1;
+          lines.push(`Столбец ${colNum}, строка ${rowNum - 1}: ${texts.join(', ')}`);
+        }
+      }
+    }
+    return lines.length > 0 ? lines : ['Нет ответов'];
+  }
+
+  // groups format: groups -> [{ group_id, options_ids: [ids] }, ...]
+  if (type === "answer/groups" && ans.right_answer?.groups) {
+    const groups: Array<{ group_id: string; options_ids: string[] }> = ans.right_answer.groups;
+    const lines: string[] = [];
+    for (const group of groups) {
+      const groupText = idToText(options, group.group_id, test);
+      const optionTexts = group.options_ids.map((optId: string) => idToText(options, optId, test));
+      lines.push(`${groupText}: ${optionTexts.join(', ')}`);
+    }
+    return lines.length > 0 ? lines : ['Нет ответов'];
   }
 
   // unknown: dump as JSON prettified

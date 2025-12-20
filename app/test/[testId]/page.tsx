@@ -11,6 +11,7 @@ export default async function TestPage({ params }: { params: Promise<{ testId: s
 
   try {
     const test = await getTest(testId);
+    console.log(JSON.stringify(test));
     return <TestPageClient test={test} />;
   } catch (err: any) {
     if (err?.status === 401) {
