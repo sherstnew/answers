@@ -301,7 +301,7 @@ export default function TestPageClient({ test }: TestPageClientProps) {
               {answers.length > 0 ? (
                 answers.map((answer, i) => {
                   // If answer contains a header ("Header: body"), render header on its own line
-                  const headerMatch = typeof answer === 'string' && answer.match(/^\s*([^:]+):(.*)$/s);
+                  const headerMatch = typeof answer === 'string' && answer.match(/^\s*([^:]+):([\s\S]*)$/);
                   if (headerMatch) {
                     const header = headerMatch[1].trim() + ':';
                     const body = headerMatch[2].trim();
