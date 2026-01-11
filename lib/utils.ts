@@ -10,90 +10,81 @@ export async function getTest(testId: number): Promise<Test> {
   const hdrs = await getHeaderValues();
   const myHeaders = buildHeaders(hdrs);
 
-  try {
-    const res = await fetch(
-      `https://uchebnik.mos.ru/webtests/exam/rest/secure/spec/${testId}`,
-      {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-        next: { revalidate: 0 },
-      }
-    );
-    if (res.status === 401) {
-      throw new HTTPError("Unauthorized", 401);
+  const res = await fetch(
+    `https://uchebnik.mos.ru/webtests/exam/rest/secure/spec/${testId}`,
+    {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+      next: { revalidate: 0 },
     }
-    if (!res.ok) {
-      throw new HTTPError(`Failed to fetch answers for testId ${testId}`, res.status);
-    }
-    const data = await res.json();
-    // console.log("Fetched data:", JSON.stringify(data.test_groups[0].tasks, null, 2));
-    // const data = testres as any;
-    return {
-      name: data.basic_info.name,
-      tasks: data.test_groups[0].tasks,
-    };
-  } catch (error) {
-    console.error("Error fetching answers:", error);
-    return { name: "", tasks: [] };
+  );
+
+  if (res.status === 401 || res.status === 403) {
+    throw new HTTPError(res.status === 401 ? "Unauthorized" : "Forbidden", res.status);
   }
+
+  if (!res.ok) {
+    throw new HTTPError(`Failed to fetch answers for testId ${testId}`, res.status);
+  }
+
+  const data = await res.json();
+  return {
+    name: data.basic_info.name,
+    tasks: data.test_groups[0].tasks,
+  };
 }
 
 export async function searchByName(name: string) {
-  try {
-    const url = "https://uchebnik.mos.ru/search/api/v3/materials";
-    const hdrs = await getHeaderValues();
-    const myHeaders = buildHeaders(hdrs);
+  const url = "https://uchebnik.mos.ru/search/api/v3/materials";
+  const hdrs = await getHeaderValues();
+  const myHeaders = buildHeaders(hdrs);
 
-    const raw = JSON.stringify({
-      query: { search: name },
-      sort: { field: "score", order: "desc" },
-      page: 1,
-      per_page: 10,
-      scope: "catalogue",
-    });
+  const raw = JSON.stringify({
+    query: { search: name },
+    sort: { field: "score", order: "desc" },
+    page: 1,
+    per_page: 10,
+    scope: "catalogue",
+  });
 
-    const requestOptions: any = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-      next: { revalidate: 0 },
-    };
+  const requestOptions: any = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+    next: { revalidate: 0 },
+  };
 
-    // Ensure content-type for POST
-    if (!myHeaders.has("Content-Type")) {
-      myHeaders.set("Content-Type", "application/json;charset=UTF-8");
-    }
-
-    const res = await fetch(url, requestOptions as any);
-
-    if (res.status === 401) {
-      throw new HTTPError("Unauthorized", 401);
-    }
-
-    if (!res.ok) {
-      throw new HTTPError(`Search failed: ${res.status} ${res.statusText}`, res.status);
-    }
-
-    const data = await res.json();
-
-    if (!data || !Array.isArray(data.data)) return [];
-
-    const normalized = data.data.filter((item: any) => {
-      const tags = item.tags || [];
-      return tags.some((t: any) => {
-        const nameLower = (t.name || "").toString().toLowerCase();
-        const type = (t.type || t.tag_type || "").toString().toLowerCase();
-        return nameLower === "цдз" && type === "special";
-      });
-    });
-
-    return normalized;
-  } catch (error) {
-    console.error("searchByName error", error);
-    return [];
+  // Ensure content-type for POST
+  if (!myHeaders.has("Content-Type")) {
+    myHeaders.set("Content-Type", "application/json;charset=UTF-8");
   }
+
+  const res = await fetch(url, requestOptions as any);
+
+  if (res.status === 401 || res.status === 403) {
+    throw new HTTPError(res.status === 401 ? "Unauthorized" : "Forbidden", res.status);
+  }
+
+  if (!res.ok) {
+    throw new HTTPError(`Search failed: ${res.status} ${res.statusText}`, res.status);
+  }
+
+  const data = await res.json();
+
+  if (!data || !Array.isArray(data.data)) return [];
+
+  const normalized = data.data.filter((item: any) => {
+    const tags = item.tags || [];
+    return tags.some((t: any) => {
+      const nameLower = (t.name || "").toString().toLowerCase();
+      const type = (t.type || t.tag_type || "").toString().toLowerCase();
+      return nameLower === "цдз" && type === "special";
+    });
+  });
+
+  return normalized;
 }
 
 async function getHeaderValues(): Promise<Record<string, string>> {

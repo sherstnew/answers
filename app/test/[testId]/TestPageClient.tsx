@@ -176,7 +176,7 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
 }
 
 function generateCopyText(test: Test) {
-  return test.tasks
+  return test.name + "\n" + test.tasks
     .map((task, index) => {
       const question =
         task.test_task.question_elements[0]?.text || "Нет вопроса";

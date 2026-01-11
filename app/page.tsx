@@ -19,12 +19,19 @@ export default function Home() {
     try {
       const resp = await fetch(`/api/search?name=${encodeURIComponent(query)}`);
       const json = await resp.json().catch(() => ({}));
-      if (resp.status === 401) {
-        setError(`Ошибка авторизации: ${json?.error || 'Unauthorized'}`);
+
+      if (resp.status === 401 || resp.status === 403) {
+        setError(`Ошибка авторизации: ${json?.error || resp.statusText || resp.status}`);
         setResults([]);
         return;
       }
-      if (!resp.ok) throw new Error(json?.error || `Server error ${resp.status}`);
+
+      if (!resp.ok) {
+        setError(json?.error || `Server error ${resp.status}`);
+        setResults([]);
+        return;
+      }
+
       setResults(json.data || []);
     } catch (e: any) {
       setError(String(e?.message || e));
