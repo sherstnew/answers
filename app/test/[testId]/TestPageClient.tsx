@@ -9,18 +9,57 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 
 interface TestPageClientProps {
   test: Test;
 }
 
 function idToText(options: Option[] | undefined, id: string, test?: Test) {
-  const getTextFromOption = (opt: Option) => opt.text ?? opt.name ?? opt.label ?? opt.value ?? (opt as any).title ?? undefined;
+  const pick = (v: any) => (typeof v === "string" && v.trim().length > 0 ? v.trim() : undefined);
+  const getTextFromOption = (opt: Option) => {
+    // prefer explicit text-like fields (ignore empty strings)
+    return (
+      pick((opt as any).text) ||
+      pick((opt as any).name) ||
+      pick((opt as any).label) ||
+      pick((opt as any).value) ||
+      pick((opt as any).title)
+    );
+  };
+
+  const getAnyRenderableFromOption = (opt: Option) => {
+    // first try normal text fields
+    const t = getTextFromOption(opt);
+    if (t) return t;
+
+    // then try to extract from content blocks (math, text, etc.)
+    const content = (opt as any).content;
+    if (Array.isArray(content)) {
+      for (const c of content) {
+        if (!c) continue;
+        // math blocks often put the expression in `content`
+        if (c.type === "content/math" && typeof c.content === "string" && c.content.trim()) {
+          return c.content.trim();
+        }
+        if (typeof c.text === "string" && c.text.trim()) return c.text.trim();
+        if (typeof c.content === "string" && c.content.trim()) return c.content.trim();
+        // nested structures
+        if (Array.isArray(c.content)) {
+          const found = c.content.find((x: any) => typeof x === "string" && x.trim());
+          if (found) return found.trim();
+        }
+      }
+    }
+
+    return undefined;
+  };
 
   if (options) {
     const opt = options.find((o) => o.id === id);
-    const t = opt ? getTextFromOption(opt) : undefined;
-    if (t) return t;
+    const t = opt ? getAnyRenderableFromOption(opt) : undefined;
+    if (t !== undefined) return t;
   }
 
   // try to find in the whole test (search all tasks' answer.options)
@@ -146,9 +185,12 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
     for (const [row, cols] of Object.entries(cells)) {
       for (const [col, texts] of Object.entries(cols)) {
         if (Array.isArray(texts) && texts.length > 0) {
-          const rowNum = parseInt(row) + 1;
-          const colNum = parseInt(col) + 1;
-          lines.push(`Столбец ${colNum}, строка ${rowNum - 1}: ${texts.join(', ')}`);
+          const rowNum = parseInt(row, 10) + 1;
+          const colNum = parseInt(col, 10) + 1;
+          lines.push(`Строка ${rowNum}, столбец ${colNum}:`);
+          for (const t of texts) {
+            lines.push(`• ${t}`);
+          }
         }
       }
     }
@@ -161,8 +203,11 @@ function getCorrectAnswerText(task: Task, test?: Test): string[] {
     const lines: string[] = [];
     for (const group of groups) {
       const groupText = idToText(options, group.group_id, test);
+      lines.push(`${groupText}:`);
       const optionTexts = group.options_ids.map((optId: string) => idToText(options, optId, test));
-      lines.push(`${groupText}: ${optionTexts.join(', ')}`);
+      for (const optText of optionTexts) {
+        lines.push(`• ${optText}`);
+      }
     }
     return lines.length > 0 ? lines : ['Нет ответов'];
   }
@@ -187,6 +232,45 @@ function generateCopyText(test: Test) {
 }
 
 export default function TestPageClient({ test }: TestPageClientProps) {
+  // split an answer string into nicer lines: prefer splitting by semicolon, keep math intact
+  const splitAnswerIntoLines = (s: string) => {
+    if (!s || typeof s !== "string") return [String(s)];
+    const parts = s
+      .split(/;+/)
+      .map((p) => p.replace(/\.+$/g, "").trim())
+      .filter(Boolean);
+    return parts.length > 0 ? parts : [s.trim()];
+  };
+
+  const isLatex = (s: string) => {
+    if (!s || typeof s !== "string") return false;
+    // heuristic: presence of backslash or common TeX tokens
+    return /\\|\\frac|\\sqrt|\^|_{|\\alpha|\\beta|\\gamma/.test(s);
+  };
+
+  const renderAnswerLine = (ln: string, key: string | number) => {
+    if (isLatex(ln)) {
+      try {
+        // render always in inline mode to avoid centering; wrap to left-align and match font size
+        const html = katex.renderToString(ln, { throwOnError: false, displayMode: false });
+        return (
+          <div key={key} className="py-0.5 text-left" style={{ fontSize: '1rem' }} dangerouslySetInnerHTML={{ __html: html }} />
+        );
+      } catch (e) {
+        return (
+          <div key={key} className="py-0.5">
+            {ln}
+          </div>
+        );
+      }
+    }
+    return (
+      <div key={key} className="py-0.5">
+        {ln}
+      </div>
+    );
+  };
+
   return (
     <div className="w-full flex flex-col gap-5 p-5">
       <Link href={'/'}>
@@ -215,11 +299,27 @@ export default function TestPageClient({ test }: TestPageClientProps) {
             </CardDescription>
             <CardContent>
               {answers.length > 0 ? (
-                answers.map((answer, i) => (
-                  <div key={i} className="py-1">
-                    {answer}
-                  </div>
-                ))
+                answers.map((answer, i) => {
+                  // If answer contains a header ("Header: body"), render header on its own line
+                  const headerMatch = typeof answer === 'string' && answer.match(/^\s*([^:]+):(.*)$/s);
+                  if (headerMatch) {
+                    const header = headerMatch[1].trim() + ':';
+                    const body = headerMatch[2].trim();
+                    return (
+                      <div key={i} className="py-1">
+                        <div className="font-semibold mb-1">{header}</div>
+                        {renderAnswerLine(body, 'body')}
+                      </div>
+                    );
+                  }
+
+                  const lines = splitAnswerIntoLines(answer);
+                  return (
+                    <div key={i} className="py-1">
+                      {lines.map((ln, j) => renderAnswerLine(ln, j))}
+                    </div>
+                  );
+                })
               ) : (
                 <div>Нет ответов</div>
               )}
