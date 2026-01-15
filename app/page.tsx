@@ -21,20 +21,24 @@ export default function Home() {
       const json = await resp.json().catch(() => ({}));
 
       if (resp.status === 401 || resp.status === 403) {
-        setError(`Ошибка авторизации: ${json?.error || resp.statusText || resp.status}`);
-        setResults([]);
+        const message = json?.error || resp.statusText || resp.status;
+        setError(`Ошибка авторизации: ${message}`);
+        setResults([{ id: `error-${resp.status}`, name: `Ошибка авторизации: ${message}`, type: 'error' }]);
         return;
       }
 
       if (!resp.ok) {
-        setError(json?.error || `Server error ${resp.status}`);
-        setResults([]);
+        const message = json?.error || `Server error ${resp.status}`;
+        setError(message);
+        setResults([{ id: `error-${resp.status}`, name: message, type: 'error' }]);
         return;
       }
 
       setResults(json.data || []);
     } catch (e: any) {
-      setError(String(e?.message || e));
+      const msg = String(e?.message || e);
+      setError(msg);
+      setResults([{ id: 'error-exception', name: msg, type: 'error' }]);
     } finally {
       setLoading(false);
     }

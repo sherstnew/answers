@@ -29,9 +29,14 @@ export async function getTest(testId: number): Promise<Test> {
   }
 
   const data = await res.json();
+  // collect tasks from all test groups (some tests have multiple groups)
+  const tasks = Array.isArray(data.test_groups)
+    ? data.test_groups.flatMap((g: any) => g.tasks || [])
+    : [];
+
   return {
-    name: data.basic_info.name,
-    tasks: data.test_groups[0].tasks,
+    name: data.basic_info?.name || "",
+    tasks,
   };
 }
 
